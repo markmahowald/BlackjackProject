@@ -11,14 +11,14 @@ public class BlackJackHand extends Hand{
 		List<Card> h = getCards();
 		for (int i = 0; i < h.size(); i++) {
 			
-			System.out.print(h.get(i).getRank()+ " of " + h.get(i).getSuit()+ " ");
+			System.out.print(h.get(i).getSuit()+ "" + h.get(i).getRank()+ " ");
 		}
 	}
 	public void dealerDisplayHand() {
 		List<Card> h = getCards();
 		for (int i = 1; i < h.size(); i++) {
 			
-			System.out.print("Dealer has "+ h.get(i).getRank()+ " of " + h.get(i).getSuit()+" showing");
+			System.out.print("Dealer has "+ h.get(i).getSuit()+ " " + h.get(i).getRank()+" showing");
 		}
 	}
 

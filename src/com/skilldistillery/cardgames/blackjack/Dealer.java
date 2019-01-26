@@ -13,41 +13,43 @@ public class Dealer extends Participant {
 
 	public void playHand(BlackJackHand hand, Deck deck) {
 		int total = hand.getValue();
+		System.out.print("Dealer flips over their hidden card. They have ");
+		hand.playerDisplayHand();
+		System.out.println(" for a total of " + getHand().getValue());
+		System.out.println();
 		while (total < 17) {
 			System.out.println("Dealer hits.");
 			hitMe(hand, deck);
 			total = hand.getValue();
 		}
-		if (!isBust(hand)) {
-			System.out.println("Dealer has " + total);
-
-		} else {
-			System.out.println("Dealer has gone bust");
-		}
+		System.out.println("Dealer has " + total);
+		isBust(hand);
+		this.setStay(true);
 
 	}
-	public void deal (Player player, Deck deck) {
+
+	public void deal(Player player, Deck deck) {
 		deck.shuffle();
 
-		//	creating empty hands for dealer and player.
+		// creating empty hands for dealer and player.
 		BlackJackHand p = new BlackJackHand();
 		BlackJackHand d = new BlackJackHand();
-		
+
 		this.setHand(d);
 		player.setHand(p);
-		
+
 		System.out.println("Dealer is shuffling.");
 		Card c = deck.dealACard();
 		this.getHand().addCard(c);
-		
+
 		c = deck.dealACard();
 		player.getHand().addCard(c);
-		
+
 		c = deck.dealACard();
 		this.getHand().addCard(c);
-		
+
 		c = deck.dealACard();
 		player.getHand().addCard(c);
-		
+
 	}
 }

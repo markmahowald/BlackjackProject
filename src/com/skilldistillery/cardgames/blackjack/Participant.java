@@ -5,13 +5,14 @@ import com.skilldistillery.cardgames.common.Deck;
 import com.skilldistillery.cardgames.common.Hand;
 
 abstract public class Participant {
-	private boolean bust;
+	private boolean bust, stay;
 	private BlackJackHand hand;
 
 	public void hitMe(BlackJackHand hand, Deck deck) {
 		Card c = deck.dealACard();
 		hand.addCard(c);
-		System.out.println(c.toString());
+		System.out.print("Hit with " + c.getSuit() +" "+ c.getRank());
+		System.out.println();
 
 	}
 
@@ -42,5 +43,15 @@ public boolean isBust(BlackJackHand hand) {
 
 	public void setHand(BlackJackHand hand) {
 		this.hand = hand;
+	}
+
+
+	public boolean isStay() {
+		return stay;
+	}
+
+
+	public void setStay(boolean stay) {
+		this.stay = stay;
 	}
 }
