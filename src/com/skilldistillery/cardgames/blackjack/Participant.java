@@ -1,0 +1,35 @@
+package com.skilldistillery.cardgames.blackjack;
+
+import com.skilldistillery.cardgames.common.Card;
+import com.skilldistillery.cardgames.common.Deck;
+import com.skilldistillery.cardgames.common.Hand;
+
+public class Participant {
+	private boolean bust;
+
+	public void hitMe(Hand hand, Deck deck) {
+		Card c = deck.dealACard();
+		hand.addCard(c);
+		System.out.println(c.toString());
+
+	}
+
+
+public boolean isBust(BlackJackHand hand) {
+	int total = hand.getValue();
+	if (total>21) {
+		setBust(true);
+		return  getBust();
+		
+	}
+	return bust;
+}
+
+	public void setBust(boolean bust) {
+		this.bust = bust;
+	}
+
+	public boolean getBust() {
+		return bust;
+	}
+}
