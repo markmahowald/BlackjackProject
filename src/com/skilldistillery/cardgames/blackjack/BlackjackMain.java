@@ -18,11 +18,13 @@ public class BlackjackMain {
 
 //deal will create hands for player and dealer. display hands will show one card for the dealer, and both for the player. 
 		System.out.println("Welcome to the Casino. Lets play blackjack. ");
-		
-		while (playAgain == 0) {
+
+		while (playAgain == 0 || playAgain == 1) {
+			playAgain=0;
 			System.out.println(deck.checkDeckSize());
 			dealer.deal(player, deck);
 			driver.displayHands(dealer, player);
+			
 			while (!player.getBust() && !player.isStay()) {
 				driver.playerChoice(player, kb, deck);
 			}
@@ -73,11 +75,13 @@ public class BlackjackMain {
 					kb.close();
 					System.exit(0);
 				}
-				if(playAgain ==1) {
+				if (playAgain == 1) {
 					player.getHand().clearHand();
 					dealer.getHand().clearHand();
-					kb.nextLine();
-					
+					player.setStay(false);
+					dealer.setStay(false);
+					player.setBust(false);
+					dealer.setBust(false);
 				}
 			}
 		}
