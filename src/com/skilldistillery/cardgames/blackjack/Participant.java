@@ -4,10 +4,11 @@ import com.skilldistillery.cardgames.common.Card;
 import com.skilldistillery.cardgames.common.Deck;
 import com.skilldistillery.cardgames.common.Hand;
 
-public class Participant {
+abstract public class Participant {
 	private boolean bust;
+	private BlackJackHand hand;
 
-	public void hitMe(Hand hand, Deck deck) {
+	public void hitMe(BlackJackHand hand, Deck deck) {
 		Card c = deck.dealACard();
 		hand.addCard(c);
 		System.out.println(c.toString());
@@ -31,5 +32,15 @@ public boolean isBust(BlackJackHand hand) {
 
 	public boolean getBust() {
 		return bust;
+	}
+
+
+	public BlackJackHand getHand() {
+		return hand;
+	}
+
+
+	public void setHand(BlackJackHand hand) {
+		this.hand = hand;
 	}
 }

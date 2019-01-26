@@ -3,7 +3,7 @@ package com.skilldistillery.cardgames.common;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Hand {
+abstract public class Hand {
 	private List<Card> handOfCards = new ArrayList<>();
 
 	public int getValue() {
@@ -19,6 +19,7 @@ public class Hand {
 
 	}
 	public void addCard(Card card) {
+		handOfCards.add(card);
 	}
 	public void clearHand() {
 		handOfCards.removeAll(handOfCards);
