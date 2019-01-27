@@ -13,4 +13,6 @@ This project was to create a command line blackjack game, in order to develop Ja
 * Looping
 
 ##### UML Diagram
-![UML Diagram](/src/Blackjack UML.ucls) 
+
+
+![UML Diagram](https://github.com/markmahowald/BlackjackProject/blob/master/src/Blackjack%20UML.ucls) 
