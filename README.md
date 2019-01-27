@@ -1,9 +1,9 @@
 ### Blackjack Project
-![Blackjack](/src/skilldistillery.cardgames/HandOfCards.jpg)
-#### Project Description
+
+##### Project Description
 This project was to create a command line blackjack game, in order to develop Java development skills. 
 
-###Topics/Technologies
+##### Topics/Technologies
 * Object-Oriented Design
   * Polymorphism
   * Inheritance
@@ -11,3 +11,6 @@ This project was to create a command line blackjack game, in order to develop Ja
 * Enumerated Types
 * Encapsulation
 * Looping
+
+##### UML Diagram
+![](src/"Blackjack UML.ucls") 
